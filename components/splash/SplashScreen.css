@@ -1,0 +1,55 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+*/
+
+.splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background);
+  z-index: 10001; /* Above everything else */
+  animation: splash-fade-out 5s ease-in-out forwards;
+}
+
+.splash-logo {
+  width: 120px;
+  height: 120px;
+  animation: logo-intro 4s ease-out forwards;
+}
+
+/* Animation for the logo: zoom, glow */
+@keyframes logo-intro {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+    filter: drop-shadow(0 0 0px var(--accent-blue-glow));
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+    filter: drop-shadow(0 0 30px var(--accent-blue-glow)) drop-shadow(0 0 15px var(--accent-glow));
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    filter: drop-shadow(0 0 15px var(--accent-blue-glow)) drop-shadow(0 0 5px var(--accent-glow));
+  }
+}
+
+/* Animation for the container: stay visible, then fade out */
+@keyframes splash-fade-out {
+  0%, 80% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

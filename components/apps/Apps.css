@@ -1,0 +1,84 @@
+/* Apps Tab */
+.apps-tab-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background);
+}
+
+.apps-iframe {
+  flex-grow: 1;
+  width: 100%;
+  border: none;
+}
+
+/* Add App Modal */
+.add-app-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.add-app-modal h2 {
+  text-align: center;
+  margin: 0;
+}
+/* Using existing form-field styles from index.css */
+
+/* App Viewer */
+.app-viewer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--background);
+  z-index: 9998; /* Below settings panel but above everything else */
+  display: flex;
+  flex-direction: column;
+  animation: app-viewer-fade-in 0.3s ease-out;
+}
+
+@keyframes app-viewer-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.app-viewer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--border);
+  background-color: var(--surface);
+  flex-shrink: 0;
+}
+
+.app-viewer-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.app-viewer-title .app-logo {
+  width: 32px;
+  height: 32px;
+}
+
+.app-viewer-title h3 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.app-viewer-header .close-button {
+  padding: 8px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+}
+
+.app-viewer-content {
+  flex-grow: 1;
+  border: none;
+  overflow-y: auto;
+}

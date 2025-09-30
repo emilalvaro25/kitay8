@@ -1,0 +1,8 @@
+{
+  "name": "Copy of kithai",
+  "description": "Kithai is an AI assistant that helps with business tasks, manages your schedule, sends messages, and more, all through natural conversation.",
+  "requestFramePermissions": [
+    "microphone",
+    "camera"
+  ]
+}
