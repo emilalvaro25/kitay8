@@ -44,10 +44,10 @@ import AddAppModal from './components/apps/AddAppModal';
 import AppViewer from './components/apps/AppViewer';
 import ScreenShareViewer from './components/ScreenShareViewer';
 
-const API_KEY = process.env.API_KEY as string;
+const API_KEY = import.meta.env.VITE_GEMINI_API_KEY as string;
 if (typeof API_KEY !== 'string') {
   throw new Error(
-    'Missing required environment variable: API_KEY'
+    'Missing required environment variable: VITE_GEMINI_API_KEY'
   );
 }
 
